@@ -1,13 +1,19 @@
-cmake ../../c++ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="../../../../target/classes/linux64" -G "Unix Makefiles"
+cp -R ../../c++/ workdir
+mkdir -p ../../../../target/classes/linux64/
+cd workdir
+./configure \
+--prefix=$PWD/release \
+--disable-cpplibs \
+--disable-doxygen-docs \
+--enable-local-xmms-plugin \
+--disable-ogg \
+--disable-thorough-tests
 
 make install
 r1=$?
-make clean
-
-rm -R CMakeFiles
-rm CMakeCache.txt
-rm cmake_install.cmake
-rm Makefile
-rm install_manifest.txt
+cp -R release/lib ../../../../../target/classes/linux64
+cp -R release/include ../../../../../target/classes/linux64
+cd ..
+rm -R workdir
 
 return $r1

@@ -12,7 +12,7 @@ https://github.com/xiph/flac
 
 ## Requirements
 
-To build this module, you will need a java 8 JDK, Maven 3, cmake and a c++ compiler.
+To build this module, you will need the latest java JDK, Maven 3, cmake and a c++ compiler.
 
 ## Coding Style and other information
 
@@ -38,31 +38,13 @@ Go to your root directory, where you POM file is located.
 
 Then invoke maven
 
-For windows 32 bits
-mvn clean install -Denv=win32
-
-For windows 64 bits
-mvn clean install -Denv=win64
-
-For linux 64 bits
-mvn clean install -Denv=linux64
+mvn clean install
 
 This will compile the source code, then run the unit tests, and finally build a jar file.
 
 ## Usage
 
 In your maven project, add the dependency
-
-For windows 32 bits
-
-```xml
-<dependency>
-    <groupId>be.yildiz-games</groupId>
-    <artifactId>component-native-flac</artifactId>
-    <version>LATEST</version>
-    <classifier>win32</classifier>
-</dependency>
-```
 
 For windows 64 bits
 

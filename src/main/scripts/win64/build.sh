@@ -1,12 +1,21 @@
-cmake ../../c++ -DCMAKE_BUILD_TYPE=Release -DCMAKE_COLOR_MAKEFILE=on -DCMAKE_INSTALL_PREFIX="../../../../target/classes/win64" -DCMAKE_TOOLCHAIN_FILE=mingw-toolchain.cmake
+cp -R ../../c++/ workdir
+mkdir -p ../../../../target/classes/win64/
+cd workdir
+./configure \
+--prefix=$PWD/release \
+--disable-cpplibs \
+--disable-doxygen-docs \
+--enable-local-xmms-plugin \
+--disable-ogg \
+--disable-thorough-tests \
+--host=x86_64-w64-mingw32
 
 make install
 r1=$?
-
-rm -R CMakeFiles
-rm CMakeCache.txt
-rm cmake_install.cmake
-rm Makefile
-rm install_manifest.txt
+cp -R release/lib ../../../../../target/classes/win64
+cp -R release/include ../../../../../target/classes/win64
+cp -R release/bin ../../../../../target/classes/win64
+cd ..
+rm -R workdir
 
 return $r1
