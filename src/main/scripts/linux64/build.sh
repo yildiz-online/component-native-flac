@@ -1,6 +1,7 @@
 cp -R ../../c++/ workdir
 mkdir -p ../../../../target/classes/linux64/
 cd workdir
+autoreconf -f -i
 ./configure \
 --prefix=$PWD/release \
 --disable-cpplibs \
