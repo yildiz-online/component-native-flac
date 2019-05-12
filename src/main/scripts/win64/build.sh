@@ -21,4 +21,4 @@ cp -R release/bin ../../../../../target/classes/win64
 cd ..
 rm -R workdir
 
-return $r1
+exit ${r1}

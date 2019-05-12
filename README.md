@@ -17,7 +17,7 @@ To build this module, you will need the latest java JDK, Maven 3, cmake and a c+
 ## Coding Style and other information
 
 Project website:
-http://www.yildiz-games.be
+https://engine.yildiz-games.be
 
 Issue tracker:
 https://yildiz.atlassian.net
@@ -46,27 +46,14 @@ This will compile the source code, then run the unit tests, and finally build a 
 
 In your maven project, add the dependency
 
-For windows 64 bits
-
 ```xml
 <dependency>
     <groupId>be.yildiz-games</groupId>
     <artifactId>component-native-flac</artifactId>
     <version>LATEST</version>
-    <classifier>win64</classifier>
 </dependency>
 ```
 
-For linux 64 bits
-
-```xml
-<dependency>
-    <groupId>be.yildiz-games</groupId>
-    <artifactId>component-native-flac</artifactId>
-    <version>LATEST</version>
-    <classifier>linux64</classifier>
-</dependency>
-```
 Replace LATEST by the version to use.
 
 ## Contact
